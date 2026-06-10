@@ -6,6 +6,7 @@ module INAND(
     );
     
     wire  signed [19:0] g_total;
+    // Aggregates input conductances via an 8-input
     Adder_Tree_8in adder_inst (
         .clk(clk), .rst(rst),
         .g1(g1), .g2(g2), .g3(g3), .g4(g4),
@@ -13,7 +14,7 @@ module INAND(
         .g_total(g_total)
     );
     
-    // KODDA 30mS 'de 23 aldığı için aynı orandan 30 aldım 30*8'den 985 çıkıyor
+  
     parameter signed [19:0] THRESHOLD = 20'sd985; // 30mS*8 
     parameter signed [19:0] OUT_VAL   = 20'sd164; // 40 mS
     
@@ -26,14 +27,13 @@ module INAND(
             counter <= 0;
             g_out <= 0;
         end else begin
-            // Ateşleme Mantığı
+            // Firing control logic: Detects when total conductance exceeds threshold
             if (!firing) begin
                 if (g_total >= THRESHOLD) begin
                     firing <= 1'b1;
                     counter <= 0;
                 end
             end else begin
-                // Counter Mantığı
                 if (counter >= 5) begin
                     firing <= 1'b0;
                     counter <= 0;
