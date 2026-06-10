@@ -23,6 +23,4 @@ The design implements a digital SNN with the following characteristics:
 * **Target Hardware:** Xilinx Virtex-6 FPGA
 * **Language:** Verilog HDL
 
-## Citation
 
-*(Paper citation will be added here after publication)*
