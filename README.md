@@ -1,4 +1,4 @@
-# FPGA Implementation of a 3-Layer Spiking Neural Network
+# FPGA Implementation of a Hippocampus
 
 This repository contains the Verilog source code for the hardware implementation of a three-layer Spiking Neural Network (SNN) on a Xilinx Virtex-6 FPGA.
 
