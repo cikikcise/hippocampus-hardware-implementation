@@ -7,6 +7,7 @@ This repository contains the Verilog source code for the hardware implementation
 The design implements a digital SNN with the following characteristics:
 * **Neuron Model:** Leaky Integrate-and-Fire (LIF) model, including digital computation of the leak current.
 * **Learning Mechanism:** Spike-Timing-Dependent Plasticity (STDP). The weight updates are managed that operates within specific pre- and post-synaptic spike timing windows.
+* * **Two LIF Models:** The network uses separate LIF neuron models for excitation and inhibition. Inhibitory neurons are configured with a different threshold and a shorter refractory period, allowing them to react faster than excitatory neurons.
 
 ## Repository Structure
 
