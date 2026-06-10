@@ -6,7 +6,7 @@ module lif_e(
     input  wire clk,
     input  wire rst,
     output reg [19:0]  g_out,  // Output
-    output reg  pf_spike_lif, // Nöron spike durumu
+    output reg  pf_spike_lif,
     output reg [19:0] v_reg, // Neuron Potential
     input wire  [19:0] pf_input_e, // Summing of exc inputs
     input wire  [19:0] pf_input_i // Summing of inh inputs
